@@ -8,9 +8,13 @@ class BirthdayForm extends Component {
         super(props);
 
         this.handleChange = this.handleChange.bind(this);
+        this.handleGenerate = this.handleGenerate.bind(this);
+        this.renderStuff = this.renderStuff.bind(this);
 
         this.state = {
-            startDate: moment()
+            startDate: moment(),
+            formCompleted: false
+            
         }
     }
     
@@ -21,14 +25,24 @@ class BirthdayForm extends Component {
 
     }
 
+    handleGenerate() {
+        this.setState({
+            formCompleted: true
+        })
+    }
+
+
+
     render() {
+        
         return (
             <div>
-                <h1>Bday From Component</h1>
+                <h1>Bday Form Component!</h1>
                 <DatePicker 
                     selcted={this.state.startDate}
                     onChange={this.handleChange}
                 />
+                <a onClick={this.handleGenerate}>Generate Countdown</a>
             </div>
         )
 
