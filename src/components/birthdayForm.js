@@ -47,7 +47,7 @@ class BirthdayForm extends Component {
                     <div>
                         <h1>Bday Form Component!</h1>
                         <DatePicker 
-                        selcted={this.state.startDate}
+                        selected={this.state.startDate}
                         onChange={this.handleChange}
                         />
                         <a onClick={this.handleGenerate}>Generate Countdown</a>
